@@ -20,13 +20,9 @@
 
     <Button
         android:id="@+id/button"
-<<<<<<< HEAD
         android:onClick="doActivity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="doActivity"
         android:text="Second Activity"
         android:textSize="32sp"
         app:layout_constraintBottom_toTopOf="@+id/textView"
