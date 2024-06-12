@@ -1,0 +1,3 @@
+An practice of using Java to make an simple app.
+MainActivity to introduce button that can make a phone call, offering an approach to deal with permission of Phone call,
+using button with Intent to launch SecondActivity and button to use internet function... 
