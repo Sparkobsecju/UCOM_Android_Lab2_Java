@@ -20,9 +20,13 @@
 
     <Button
         android:id="@+id/button"
+<<<<<<< HEAD
         android:onClick="doActivity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="doActivity"
         android:text="Second Activity"
         android:textSize="32sp"
         app:layout_constraintBottom_toTopOf="@+id/textView"
@@ -37,5 +41,15 @@
         android:textSize="32sp"
         app:layout_constraintBottom_toTopOf="@+id/button"
         app:layout_constraintEnd_toEndOf="@+id/button" />
+
+    <Button
+        android:id="@+id/button14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="doYahoo"
+        android:text="Yahoo"
+        android:textSize="32sp"
+        app:layout_constraintBottom_toTopOf="@+id/button13"
+        app:layout_constraintEnd_toEndOf="@+id/button13" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

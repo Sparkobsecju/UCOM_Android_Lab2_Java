@@ -1,6 +1,6 @@
 package com.example.lab2_java;
 
-import static android.content.Intent.ACTION_CALL;
+import static android.content.Intent.ACTION_VIEW;
 
 import android.Manifest;
 import android.app.AlertDialog;
@@ -10,9 +10,9 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
@@ -46,6 +46,19 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private static final int CALL_PHONE_PERMISSION_CHECK = 1234;
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if (requestCode == CALL_PHONE_PERMISSION_CHECK && grantResults.length > 0
+                && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+            realCallPhone();
+        } else {
+            TextView t = findViewById(R.id.textView);
+            t.setText("需要去重置權限，才能再進行通話測試");
+        }
+    }
+
     private void checkCallPhonePermission() {
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
             //Toast.makeText(this,"need to check permission, but how?",Toast.LENGTH_LONG).show();
@@ -83,5 +96,12 @@ public class MainActivity extends AppCompatActivity {
             TextView t = findViewById(R.id.textView);
             t.setText(String.format("沒有權限, 訊息是%s", se.getCause().toString()));
         }
+    }
+
+
+    public void doYahoo() {
+        Intent intent = new Intent(ACTION_VIEW);
+        intent.setData(Uri.parse("http://www.yahoo.com.tw"));
+        startActivity(intent);
     }
 }
