@@ -1,7 +1,7 @@
 package com.example.lab2_java;
 
+import android.graphics.Color;
 import android.os.Bundle;
-import android.os.PersistableBundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -40,6 +40,17 @@ public class SecondActivity extends AppCompatActivity implements View.OnClickLis
 
         Button button7 = findViewById(R.id.button7);
         button7.setOnClickListener( v -> Toast.makeText(this, "button7 clicked", Toast.LENGTH_LONG).show() );
+
+        Button button8 = findViewById(R.id.button8);
+        button8.setOnClickListener(v -> {
+            v.setBackgroundColor(Color.GREEN);
+        });
+
+        Button button9 = findViewById(R.id.button9);
+        button9.setOnClickListener(v -> {
+            Button btn = (Button) v;
+            btn.setText("1234567");
+        });
     }
 
     @Override
